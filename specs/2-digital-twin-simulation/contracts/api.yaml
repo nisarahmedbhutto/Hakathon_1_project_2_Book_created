@@ -1,0 +1,72 @@
+# Contract: Documentation API for Digital Twin Module
+
+## Purpose
+This contract defines the API endpoints that may be used to support the Digital Twin documentation module, particularly for features like search, navigation, or user interaction tracking.
+
+## Endpoints
+
+### GET /api/docs/digital-twin-simulation/chapters
+- **Purpose**: Retrieve list of available chapters in the Digital Twin module
+- **Response**:
+  ```json
+  {
+    "chapters": [
+      {
+        "id": "chapter-1-digital-twins",
+        "title": "Digital Twins and Physics-Based Simulation",
+        "description": "Introduction to digital twins in robotics and physics-based simulation",
+        "order": 1
+      },
+      {
+        "id": "chapter-2-environment-building",
+        "title": "Environment Building with Gazebo and Unity",
+        "description": "Creating simulated worlds and loading humanoid robots",
+        "order": 2
+      },
+      {
+        "id": "chapter-3-sensor-simulation",
+        "title": "Simulating Robot Sensors",
+        "description": "Understanding simulated sensors for Physical AI",
+        "order": 3
+      }
+    ]
+  }
+  ```
+
+### GET /api/docs/digital-twin-simulation/chapter/{chapterId}
+- **Purpose**: Retrieve specific chapter content metadata
+- **Response**:
+  ```json
+  {
+    "id": "chapter-1-digital-twins",
+    "title": "Digital Twins and Physics-Based Simulation",
+    "contentPreview": "Introduction to digital twins in robotics and physics-based simulation...",
+    "sections": ["What is a digital twin", "Physics concepts", "Gazebo simulator", ...],
+    "relatedChapters": ["chapter-2-environment-building"]
+  }
+  ```
+
+### POST /api/docs/digital-twin-simulation/search
+- **Purpose**: Search within the Digital Twin documentation module
+- **Request**:
+  ```json
+  {
+    "query": "Gazebo simulation",
+    "filters": {
+      "chapterIds": ["chapter-1-digital-twins", "chapter-2-environment-building"]
+    }
+  }
+  ```
+- **Response**:
+  ```json
+  {
+    "results": [
+      {
+        "chapterId": "chapter-2-environment-building",
+        "title": "Environment Building with Gazebo and Unity",
+        "snippet": "...Gazebo provides realistic physics simulation for robots...",
+        "relevance": 0.95
+      }
+    ]
+  }
+  ```

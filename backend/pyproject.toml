@@ -1,0 +1,28 @@
+[project]
+name = "website-content-ingestion"
+version = "0.1.0"
+description = "RAG system for ingesting website content, generating embeddings, and storing vectors in Qdrant"
+authors = [
+    {name = "AI Engineer", email = "engineer@example.com"}
+]
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "cohere>=5.0.0",
+    "qdrant-client>=1.8.0",
+    "beautifulsoup4>=4.12.0",
+    "requests>=2.31.0",
+    "python-dotenv>=1.0.0",
+    "asyncio>=3.4.3",
+    "playwright>=1.40.0",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.uv]
+dev-dependencies = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.21.0",
+]

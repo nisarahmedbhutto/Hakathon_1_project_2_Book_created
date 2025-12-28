@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Robot body -->
+  <rect x="30" y="30" width="40" height="40" rx="5" fill="#45b7d1"/>
+
+  <!-- Head -->
+  <rect x="40" y="15" width="20" height="20" rx="10" fill="#45b7d1"/>
+
+  <!-- Eyes -->
+  <circle cx="45" cy="25" r="2" fill="#1a1a1a"/>
+  <circle cx="55" cy="25" r="2" fill="#1a1a1a"/>
+
+  <!-- Arms -->
+  <rect x="20" y="35" width="10" height="5" fill="#45b7d1"/>
+  <rect x="70" y="35" width="10" height="5" fill="#45b7d1"/>
+
+  <!-- Legs -->
+  <rect x="40" y="70" width="5" height="15" fill="#45b7d1"/>
+  <rect x="55" y="70" width="5" height="15" fill="#45b7d1"/>
+
+  <!-- Chest panel -->
+  <rect x="40" y="40" width="20" height="15" rx="2" fill="#f9ca24"/>
+</svg>

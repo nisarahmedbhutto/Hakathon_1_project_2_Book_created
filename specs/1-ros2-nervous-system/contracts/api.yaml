@@ -1,0 +1,72 @@
+# Contract: Documentation API for ROS 2 Module
+
+## Purpose
+This contract defines the API endpoints that may be used to support the ROS 2 documentation module, particularly for features like search, navigation, or user interaction tracking.
+
+## Endpoints
+
+### GET /api/docs/ros2-nervous-system/chapters
+- **Purpose**: Retrieve list of available chapters in the ROS 2 module
+- **Response**:
+  ```json
+  {
+    "chapters": [
+      {
+        "id": "chapter-1-embodied-intelligence",
+        "title": "ROS 2 and Embodied Intelligence",
+        "description": "Introduction to ROS 2 as a distributed robotic nervous system",
+        "order": 1
+      },
+      {
+        "id": "chapter-2-communication-patterns",
+        "title": "Communication in Humanoid Robots — Nodes, Topics, and Services",
+        "description": "Explanation of ROS 2 communication patterns",
+        "order": 2
+      },
+      {
+        "id": "chapter-3-ai-robot-bridge",
+        "title": "Bridging Python AI Agents to Robot Bodies",
+        "description": "Connecting AI agents to ROS 2 systems",
+        "order": 3
+      }
+    ]
+  }
+  ```
+
+### GET /api/docs/ros2-nervous-system/chapter/{chapterId}
+- **Purpose**: Retrieve specific chapter content metadata
+- **Response**:
+  ```json
+  {
+    "id": "chapter-1-embodied-intelligence",
+    "title": "ROS 2 and Embodied Intelligence",
+    "contentPreview": "Introduction to ROS 2 as a distributed robotic nervous system...",
+    "sections": ["Physical AI vs purely digital AI", "Role of ROS 2 in humanoid robots", ...],
+    "relatedChapters": ["chapter-2-communication-patterns"]
+  }
+  ```
+
+### POST /api/docs/ros2-nervous-system/search
+- **Purpose**: Search within the ROS 2 documentation module
+- **Request**:
+  ```json
+  {
+    "query": "ROS 2 nodes",
+    "filters": {
+      "chapterIds": ["chapter-1-embodied-intelligence", "chapter-2-communication-patterns"]
+    }
+  }
+  ```
+- **Response**:
+  ```json
+  {
+    "results": [
+      {
+        "chapterId": "chapter-2-communication-patterns",
+        "title": "Communication in Humanoid Robots — Nodes, Topics, and Services",
+        "snippet": "...ROS 2 nodes are individual processes that communicate with other nodes...",
+        "relevance": 0.95
+      }
+    ]
+  }
+  ```

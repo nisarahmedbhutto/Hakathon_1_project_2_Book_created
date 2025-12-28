@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Head -->
+  <circle cx="50" cy="25" r="12" fill="#74b9ff"/>
+
+  <!-- Body -->
+  <rect x="40" y="37" width="20" height="30" rx="3" fill="#74b9ff"/>
+
+  <!-- Arms -->
+  <line x1="30" y1="45" x2="40" y2="45" stroke="#74b9ff" stroke-width="5" stroke-linecap="round"/>
+  <line x1="60" y1="45" x2="70" y2="45" stroke="#74b9ff" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- Legs -->
+  <line x1="45" y1="67" x2="45" y2="85" stroke="#74b9ff" stroke-width="5" stroke-linecap="round"/>
+  <line x1="55" y1="67" x2="55" y2="85" stroke="#74b9ff" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- Eyes -->
+  <circle cx="45" cy="22" r="1.5" fill="#2d3436"/>
+  <circle cx="55" cy="22" r="1.5" fill="#2d3436"/>
+
+  <!-- Chest panel -->
+  <rect x="43" y="45" width="14" height="8" rx="2" fill="#00b894"/>
+</svg>

@@ -1,0 +1,72 @@
+# Contract: Documentation API for Vision-Language-Action Module
+
+## Purpose
+This contract defines the API endpoints that may be used to support the VLA documentation module, particularly for features like search, navigation, or user interaction tracking.
+
+## Endpoints
+
+### GET /api/docs/vla/chapters
+- **Purpose**: Retrieve list of available chapters in the VLA module
+- **Response**:
+  ```json
+  {
+    "chapters": [
+      {
+        "id": "chapter-1-vla-systems",
+        "title": "Vision-Language-Action Systems in Robotics",
+        "description": "Introduction to VLA systems and their role in robotics",
+        "order": 1
+      },
+      {
+        "id": "chapter-2-voice-to-action",
+        "title": "Voice-to-Action with Speech and LLMs",
+        "description": "Converting voice commands to robot actions using LLMs",
+        "order": 2
+      },
+      {
+        "id": "chapter-3-autonomous-humanoid",
+        "title": "Capstone — The Autonomous Humanoid",
+        "description": "End-to-end system architecture for autonomous humanoid robots",
+        "order": 3
+      }
+    ]
+  }
+  ```
+
+### GET /api/docs/vla/chapter/{chapterId}
+- **Purpose**: Retrieve specific chapter content metadata
+- **Response**:
+  ```json
+  {
+    "id": "chapter-1-vla-systems",
+    "title": "Vision-Language-Action Systems in Robotics",
+    "contentPreview": "Introduction to Vision-Language-Action systems in robotics...",
+    "sections": ["What is VLA", "Evolution to cognitive robots", "Architecture", ...],
+    "relatedChapters": ["chapter-2-voice-to-action"]
+  }
+  ```
+
+### POST /api/docs/vla/search
+- **Purpose**: Search within the VLA documentation module
+- **Request**:
+  ```json
+  {
+    "query": "voice command pipeline",
+    "filters": {
+      "chapterIds": ["chapter-2-voice-to-action"]
+    }
+  }
+  ```
+- **Response**:
+  ```json
+  {
+    "results": [
+      {
+        "chapterId": "chapter-2-voice-to-action",
+        "title": "Voice-to-Action with Speech and LLMs",
+        "snippet": "...Voice command pipelines in robotics enable converting human voice commands into structured robot actions...",
+        "relevance": 0.95
+      }
+    ]
+  }
+  ```

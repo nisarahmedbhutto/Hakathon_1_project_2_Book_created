@@ -1,55 +1,46 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!-- Sync Impact Report:
+Version change: N/A → 1.0.0
+Added sections: All principles and sections for AI-Spec-Driven Technical Book project
+Removed sections: None (new constitution)
+Modified principles: N/A (new constitution)
+Templates requiring updates:
+- .specify/templates/plan-template.md ✅ updated
+- .specify/templates/spec-template.md ✅ updated
+- .specify/templates/tasks-template.md ✅ updated
+- .specify/templates/commands/*.md ⚠ pending
+Follow-up TODOs:
+- RATIFICATION_DATE: Original adoption date unknown
+-->
+
+# AI-Spec-Driven Technical Book with Embedded RAG Chatbot Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### Spec-driven development
+All work must follow written specifications; No implementation without an approved spec; Specs must be explicit, scoped, and testable. This ensures that every feature and change is properly planned and documented before implementation begins.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### Accuracy and faithfulness to source content
+No hallucinated facts or unsupported claims; All technical explanations must be internally consistent; Clear instructional writing for developers and technical learners. The book content must remain accurate and reliable at all times.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### Separation of concerns
+Clear separation between book content, frontend, backend, and AI systems; Single unified repository with clear /frontend and /backend separation. This ensures maintainability and clear boundaries between different system components.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### Reproducibility and production-grade standards
+Entire project can be rebuilt from repository; Production-grade engineering standards; No breaking changes without spec updates. The project must be fully reproducible from the repository and maintain high engineering standards.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### Free-tier compatible infrastructure
+Infrastructure must work on free tiers; No unnecessary dependencies; Claude Code is the sole implementation agent. The project must remain cost-effective by utilizing free-tier services and minimizing dependencies.
 
-### [PRINCIPLE_6_NAME]
+### Quality controls
+No code or content duplication; No speculative features; Every component must have a clear purpose; All failures must be explicit and explainable. Quality is maintained through strict controls on duplication and feature creep.
 
+## Book and AI System Standards
+Book standards: Framework: Docusaurus (static site generation), Output: Deployed to GitHub Pages, Writing style: Clear, structured, instructional, Audience: Developers, AI engineers, software architects. RAG chatbot standards: Chatbot must answer questions strictly from book content; Must support full-book question answering and user-selected text–only question answering; Architecture: FastAPI backend, OpenAI Agents / ChatKit SDKs, Neon Serverless Postgres (metadata + conversations), Qdrant Cloud (vector storage, free tier); No responses based on external or unstated knowledge; Clear failure responses when information is not present.
 
-[PRINCIPLE__DESCRIPTION]
-
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
-
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
-
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+## Frontend and Backend Standards
+Frontend integration: Chatbot must be embedded inside the Docusaurus site; UI must be minimal, accessible, and non-intrusive; Book reading experience must remain primary; No frontend logic leaks into backend responsibilities. Backend standards: Clean API boundaries; Stateless endpoints where possible; Environment-based configuration; Secure handling of API keys and secrets; Designed for future scalability.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
+AI/Spec-driven workflow: All tasks must originate from Spec-Kit Plus specifications; No manual edits outside the defined workflow. Constraints: No breaking changes without spec updates; Free-tier compatible infrastructure only. Quality controls: Documentation must reflect actual behavior.
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
-
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: TODO(RATIFICATION_DATE): Original adoption date unknown | **Last Amended**: 2025-12-28

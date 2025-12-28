@@ -1,0 +1,72 @@
+# Contract: Documentation API for AI-Robot Brain Module
+
+## Purpose
+This contract defines the API endpoints that may be used to support the AI-Robot Brain documentation module, particularly for features like search, navigation, or user interaction tracking.
+
+## Endpoints
+
+### GET /api/docs/ai-robot-brain-isaac/chapters
+- **Purpose**: Retrieve list of available chapters in the AI-Robot Brain module
+- **Response**:
+  ```json
+  {
+    "chapters": [
+      {
+        "id": "chapter-1-isaac-sim",
+        "title": "NVIDIA Isaac Sim and Synthetic Data",
+        "description": "Introduction to NVIDIA Isaac Sim and synthetic data generation",
+        "order": 1
+      },
+      {
+        "id": "chapter-2-hardware-accelerated-perception",
+        "title": "Isaac ROS and Hardware-Accelerated Perception",
+        "description": "Isaac ROS architecture and hardware-accelerated perception",
+        "order": 2
+      },
+      {
+        "id": "chapter-3-navigation-nav2",
+        "title": "Navigation and Path Planning with Nav2",
+        "description": "Navigation challenges for humanoid robots using Nav2",
+        "order": 3
+      }
+    ]
+  }
+  ```
+
+### GET /api/docs/ai-robot-brain-isaac/chapter/{chapterId}
+- **Purpose**: Retrieve specific chapter content metadata
+- **Response**:
+  ```json
+  {
+    "id": "chapter-1-isaac-sim",
+    "title": "NVIDIA Isaac Sim and Synthetic Data",
+    "contentPreview": "Introduction to NVIDIA Isaac Sim and synthetic data generation...",
+    "sections": ["NVIDIA Isaac ecosystem", "Photorealistic simulation", "Synthetic data", ...],
+    "relatedChapters": ["chapter-2-hardware-accelerated-perception"]
+  }
+  ```
+
+### POST /api/docs/ai-robot-brain-isaac/search
+- **Purpose**: Search within the AI-Robot Brain documentation module
+- **Request**:
+  ```json
+  {
+    "query": "VSLAM Isaac",
+    "filters": {
+      "chapterIds": ["chapter-2-hardware-accelerated-perception"]
+    }
+  }
+  ```
+- **Response**:
+  ```json
+  {
+    "results": [
+      {
+        "chapterId": "chapter-2-hardware-accelerated-perception",
+        "title": "Isaac ROS and Hardware-Accelerated Perception",
+        "snippet": "...Hardware-accelerated VSLAM (Visual SLAM) for robot navigation...",
+        "relevance": 0.95
+      }
+    ]
+  }
+  ```
